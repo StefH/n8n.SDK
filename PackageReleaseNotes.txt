@@ -1,4 +1,0 @@
-# 0.0.2 (10 June 2025)
-- #6 Make BaseAddresses nullable [enhancement]
-
-The full release notes can be found here: https://github.com/StefH/n8n.SDK/blob/main/ReleaseNotes.md

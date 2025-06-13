@@ -14,7 +14,7 @@ internal class Worker(INodemationApi api, ILogger<Worker> logger)
         }
     }
 
-    private string ToJson(object value)
+    private static string ToJson(object value)
     {
         return JsonConvert.SerializeObject(value, Formatting.Indented);
     }
