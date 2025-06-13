@@ -73,7 +73,7 @@ public interface INodemationApi
     /// <param name="includeData">Whether or not to include the execution's detailed data.</param>
     /// <param name="cancellationToken">The optional <see cref="CancellationToken"/>.</param>
     [Get("/executions/{id}")]
-    Task<Execution> GetExecutionAsync([Path] long id, [Query("includeData")] bool? includeData = null, CancellationToken cancellationToken = default);
+    Task<Execution> GetExecutionAsync([Path] string id, [Query("includeData")] bool? includeData = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Deletes an execution from your instance.
@@ -81,7 +81,7 @@ public interface INodemationApi
     /// <param name="id">The ID of the execution.</param>
     /// <param name="cancellationToken">The optional <see cref="CancellationToken"/>.</param>
     [Delete("/executions/{id}")]
-    Task<Execution> DeleteExecutionAsync([Path] long id, CancellationToken cancellationToken = default);
+    Task<Execution> DeleteExecutionAsync([Path] string id, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Create a tag in your instance.

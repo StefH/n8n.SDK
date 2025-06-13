@@ -17,6 +17,9 @@ internal class Worker(INodemationApi api, ILogger<Worker> logger)
         foreach (var execution in executions.Data)
         {
             logger.LogInformation("execution: {execution}", ToJson(execution));
+
+            var e = await api.GetExecutionAsync(execution.Id, cancellationToken: cancellationToken);
+            logger.LogInformation("GetExecutionAsync: {execution}", ToJson(e));
         }
 
         var credentialType = await api.GetCredentialTypeAsync("openRouterApi", cancellationToken);
