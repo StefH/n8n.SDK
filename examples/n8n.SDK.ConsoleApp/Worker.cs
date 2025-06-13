@@ -12,6 +12,9 @@ internal class Worker(INodemationApi api, ILogger<Worker> logger)
         {
             logger.LogInformation("Flow: {flow}", ToJson(flow));
         }
+
+        var credentialType = await api.GetCredentialTypeAsync("openRouterApi", cancellationToken);
+        logger.LogInformation("CredentialType: {credentialType}", ToJson(credentialType));
     }
 
     private static string ToJson(object value)
