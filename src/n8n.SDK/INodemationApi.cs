@@ -3,6 +3,9 @@ using RestEase;
 
 namespace n8n.SDK;
 
+/// <summary>
+/// Based on https://docs.n8n.io/api/api-reference/ (1.1.1)
+/// </summary>
 public interface INodemationApi
 {
     /// <summary>
@@ -233,10 +236,10 @@ public interface INodemationApi
     /// <param name="cancellationToken">The optional <see cref="CancellationToken"/>.</param>
     [Get("/users")]
     Task<UserList> GetUsersAsync(
-        [Query("limit")] int? limit = null, 
-        [Query("cursor")] string? cursor = null, 
-        [Query("includeRole")] bool? includeRole = null, 
-        [Query("projectId")] string? projectId = null, 
+        [Query("limit")] int? limit = null,
+        [Query("cursor")] string? cursor = null,
+        [Query("includeRole")] bool? includeRole = null,
+        [Query("projectId")] string? projectId = null,
         CancellationToken cancellationToken = default);
 
     /// <summary>
