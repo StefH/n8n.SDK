@@ -10,11 +10,17 @@ internal class Worker(INodemationApi api, ILogger<Worker> logger)
         var workflows = await api.GetWorkflowsAsync(active: true, cancellationToken: cancellationToken);
         foreach (var flow in workflows.Data)
         {
-            logger.LogInformation("Flow: {flow}", ToJson(flow));
+            logger.LogInformation("flow: {flow}", ToJson(flow));
+        }
+
+        var executions = await api.GetExecutionsAsync(cancellationToken: cancellationToken);
+        foreach (var execution in executions.Data)
+        {
+            logger.LogInformation("execution: {execution}", ToJson(execution));
         }
 
         var credentialType = await api.GetCredentialTypeAsync("openRouterApi", cancellationToken);
-        logger.LogInformation("CredentialType: {credentialType}", ToJson(credentialType));
+        logger.LogInformation("credentialType: {credentialType}", ToJson(credentialType));
     }
 
     private static string ToJson(object value)

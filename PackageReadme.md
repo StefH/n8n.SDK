@@ -1,5 +1,5 @@
 ﻿## n8n SDK
-Unofficial [RestEase](https://github.com/canton7/RestEase) C# Client for [n8n](https://n8n.io).
+Unofficial [RestEase](https://github.com/canton7/RestEase) C# Client for [n8n (Nodemation)](https://n8n.io).
 
 ### ⭐ Usage
 
@@ -22,5 +22,5 @@ var serviceProvider = services.BuildServiceProvider();
 ``` c#
 var api = serviceProvider.GetRequiredService<INodemationApi>();
 
-// TODO
+var credentialType = await api.GetCredentialTypeAsync("openRouterApi");
 ```

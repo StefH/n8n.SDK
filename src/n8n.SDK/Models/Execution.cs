@@ -2,7 +2,7 @@
 
 public class Execution
 {
-    public long Id { get; set; }
+    public required string Id { get; set; }
 
     public object? Data { get; set; }
 
@@ -18,7 +18,7 @@ public class Execution
 
     public DateTime? StoppedAt { get; set; }
 
-    public long WorkflowId { get; set; }
+    public required string WorkflowId { get; set; }
 
     public DateTime? WaitTill { get; set; }
 
