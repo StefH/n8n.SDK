@@ -1,0 +1,36 @@
+<Project>
+  <PropertyGroup>
+    <Version>0.0.1-preview-00</Version>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <ApplicationIcon>../../resources/n8n.ico</ApplicationIcon>
+    <Copyright>Copyright © 2025 Stef Heyenrath</Copyright>
+    <Authors>Stef Heyenrath</Authors>
+    <PackageIcon>n8n_128x128.png</PackageIcon>
+    <PackageReleaseNotes>$([System.IO.File]::ReadAllText("$(MSBuildProjectDirectory)/../../PackageReleaseNotes.txt"))</PackageReleaseNotes>
+    <PackageProjectUrl>https://github.com/StefH/n8n.SDK</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/StefH/n8n.SDK</RepositoryUrl>
+    <PackageReadmeFile>PackageReadme.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="../../resources/n8n_128x128.png" Pack="true" PackagePath="" />
+    <None Include="../../PackageReadme.md" Pack="true" PackagePath="" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="JetBrains.Annotations" Version="2024.3.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>
