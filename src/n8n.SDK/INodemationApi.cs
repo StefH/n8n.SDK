@@ -6,6 +6,7 @@ namespace n8n.SDK;
 /// <summary>
 /// Based on https://docs.n8n.io/api/api-reference/ (1.1.1)
 /// </summary>
+[PublicAPI]
 public interface INodemationApi
 {
     /// <summary>
