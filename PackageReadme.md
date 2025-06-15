@@ -1,12 +1,9 @@
-﻿# ![Logo](./resources/n8n_32x32.png) n8n .NET SDK
+﻿## n8n SDK
 Unofficial [RestEase](https://github.com/canton7/RestEase) C# Client for [n8n (Nodemation)](https://n8n.io).
 
-## 📦 n8n.SDK
-[![NuGet Badge](https://img.shields.io/nuget/v/n8n.SDK)](https://www.nuget.org/packages/n8n.SDK)<br>
+### ⭐ Usage
 
-## ⭐ Usage
-
-### Register
+#### Register
 
 ``` c#
 var configuration = new ConfigurationBuilder()
@@ -20,7 +17,7 @@ services.AddNodemationSDK(configuration);
 var serviceProvider = services.BuildServiceProvider();
 ```
 
-### Example
+#### Example
 
 ``` c#
 var api = serviceProvider.GetRequiredService<INodemationApi>();

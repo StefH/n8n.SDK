@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>n8n.SDK</RootNamespace>
+    <TargetFrameworks>netstandard2.1;net6.0;net8.0</TargetFrameworks>
+    <PackageTags>n8n;SDK;AI;Nodemation;client;rest;api;restease;</PackageTags>
+    <Description>This unofficial (RestEase based) client enables working with the n8n REST Interface (https://docs.n8n.io/api/api-reference/)</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="RestEase.Authentication" Version="0.0.2" />
+    <PackageReference Include="RestEase.SourceGenerator" Version="1.6.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' != 'net8.0' ">
+    <PackageReference Include="Polyfill" Version="7.33.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="$(AssemblyName).Tests" />
+  </ItemGroup>
+
+</Project>
